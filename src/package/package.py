@@ -17,6 +17,7 @@ class Package:
         validator = Validator()
         parsed_command, parameters = validator.validator(command)
 
+        print(parsed_command, parameters)
         # checking given parameters
         handler = Handler()
         parameters = handler.handler(parsed_command, parameters)
