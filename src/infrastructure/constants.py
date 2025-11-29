@@ -5,7 +5,6 @@ from src.modules.math.factorial import factorial, factorial_recursive
 
 LOG_DIR = os.path.join(os.path.dirname(
     os.path.abspath(__file__)), "../../.algorithms_log")
-print(LOG_DIR)
 
 FUNCTIONS = {
     "fibonacci": fibonacci,
@@ -14,6 +13,7 @@ FUNCTIONS = {
     "factorial_recursive": factorial_recursive,
 }
 
-COMMAND_RE = r"(a-zA-Z-)*"
-PARAMETERS_RE = r"[\s]*"
-REGULAR_EXPRESSION = re.compile("|".join([COMMAND_RE, PARAMETERS_RE]))
+TOKEN_RE = r"[a-zA-Z]+(?:-[a-zA-Z]+)*|-?\d+"
+REGULAR_EXPRESSION = re.compile(TOKEN_RE)
+# PARAMETERS_RE = r"[^\s]+"
+# REGULAR_EXPRESSION = re.compile("|".join([COMMAND_RE, PARAMETERS_RE]))

@@ -40,3 +40,9 @@ def factorial_recursive(n: int) -> int:
     if n == 2:
         return 2
     return n*factorial_recursive(n-1)
+
+
+COMMAND_CONFIG = {
+    "name": "factorial",
+    "data_types": ["int"],
+}

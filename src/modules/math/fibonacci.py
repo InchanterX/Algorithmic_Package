@@ -8,8 +8,14 @@ def fibonacci(n: int) -> int:
 
 def fibonacci_recursive(n: int) -> int:
     '''
-    Unoptimized solution to find fibonacci number using recursion
+    Not optimized solution to find fibonacci number using recursion
     '''
     if n == 1 or n == 2:
         return 1
     return fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
+
+
+COMMAND_CONFIG = {
+    "name": "fibonacci",
+    "data_types": ["int"],
+}

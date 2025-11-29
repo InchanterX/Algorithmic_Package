@@ -2,6 +2,7 @@ from src.infrastructure.logger import logger
 import logging.config
 from src.common.config import LOGGING_CONFIG
 import src.infrastructure.constants as constants
+from src.infrastructure.validator import Validator
 
 
 def main() -> None:
@@ -21,6 +22,15 @@ def main() -> None:
                 print("Exiting the CLI.")
                 logger.info("Logging stopped.")
                 break
+
+            # parsing inputted command
+            validator = Validator()
+            parsed_command, parameters = validator.validator(command)
+
+            # applying function according to the function name
+            function = constants.FUNCTIONS[parsed_command]
+            result = function(int(parameters[0]))
+            print(">", result)
 
     except KeyboardInterrupt:
         print("Exiting the console.")
