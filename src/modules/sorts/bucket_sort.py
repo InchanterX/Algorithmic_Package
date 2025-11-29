@@ -10,6 +10,10 @@ def _insertion_sort(bucket: list) -> list:
 
 
 def bucket_sort(parameters: list) -> list:
+    '''
+    Bucket sort split given elements to the buckets with index that is closest to the element ratio to buckets amount.
+    Then sort buckets using insertion_sort and unite it to the result.
+    '''
     n = len(parameters)
     buckets: list[list[int]] = [[] for _ in range(n)]
 
