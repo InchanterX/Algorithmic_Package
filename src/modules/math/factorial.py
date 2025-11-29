@@ -1,4 +1,9 @@
 def factorial(n: int) -> int:
+    '''
+    A fast solution to count factorial by finding prime numbers among the sequence from 0 to n
+    using Eratosthenes's sieve and following math formula
+    '''
+
     # base cases
     if n < 0:
         return 0
@@ -32,6 +37,9 @@ def factorial(n: int) -> int:
 
 
 def factorial_recursive(n: int) -> int:
+    '''
+    A simple but extremely slow solution of counting factorial using recursion
+    '''
     # base cases
     if n < 0:
         return 0
@@ -39,10 +47,5 @@ def factorial_recursive(n: int) -> int:
         return 1
     if n == 2:
         return 2
+    # recursive call of function
     return n*factorial_recursive(n-1)
-
-
-COMMAND_CONFIG = {
-    "name": "factorial",
-    "data_types": ["int"],
-}

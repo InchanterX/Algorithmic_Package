@@ -13,9 +13,3 @@ def fibonacci_recursive(n: int) -> int:
     if n == 1 or n == 2:
         return 1
     return fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
-
-
-COMMAND_CONFIG = {
-    "name": "fibonacci",
-    "data_types": ["int"],
-}
